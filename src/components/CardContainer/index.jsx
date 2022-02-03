@@ -1,13 +1,25 @@
 import React from "react";
 import styles from "./CardContainer.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function CardContainer({ cardInfo = {}, big = false }) {
+  const navigate = useNavigate();
   const {
     cardName = null,
     cardNumber = null,
     ownerName = null,
     validity = null,
   } = cardInfo;
+
+  if (Object.keys(cardInfo).length === 0) {
+    return (
+      <div className={styles.CardBox}>
+        <div className={styles.EmptyCard} onClick={() => navigate("/detail")}>
+          <span>+</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.CardBox}>
