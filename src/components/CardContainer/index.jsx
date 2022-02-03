@@ -5,10 +5,11 @@ import { useNavigate } from "react-router-dom";
 export default function CardContainer({ cardInfo = {}, big = false }) {
   const navigate = useNavigate();
   const {
-    cardName = null,
+    companyName = null,
     cardNumber = null,
     ownerName = null,
     validity = null,
+    cardAlias = null,
   } = cardInfo;
 
   if (Object.keys(cardInfo).length === 0) {
@@ -26,7 +27,7 @@ export default function CardContainer({ cardInfo = {}, big = false }) {
       <div className={big ? styles.BigCard : styles.SmallCard}>
         <div className={styles.CardTop}>
           <strong className={big ? styles.CardTextBig : styles.CardText}>
-            {cardName}
+            {companyName}
           </strong>
         </div>
         <div className={styles.CardMiddle}>
@@ -45,6 +46,11 @@ export default function CardContainer({ cardInfo = {}, big = false }) {
             <span className={styles.CardBottomNumber}>{validity}</span>
           </div>
         </div>
+        {cardAlias && (
+          <div className="flex-center">
+            <span>{cardAlias}</span>
+          </div>
+        )}
       </div>
     </div>
   );

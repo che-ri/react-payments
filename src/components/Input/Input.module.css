@@ -1,8 +1,8 @@
-.input-container {
+.InputContainer {
   margin: 16px 0;
 }
 
-.input-box {
+.InputBox {
   display: flex;
   align-items: center;
   margin-top: 0.375rem;
@@ -11,9 +11,10 @@
   background-color: #ecebf1;
 }
 
-.input-title {
+.InputTitle {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   font-size: 12px;
   line-height: 14px;
@@ -23,7 +24,7 @@
   color: #525252;
 }
 
-.input-basic {
+.InputBasic {
   background-color: #ecebf1;
   height: 45px;
   width: 100%;
@@ -35,7 +36,7 @@
   border-radius: 0.25rem;
 }
 
-.input-underline {
+.InputUnderline {
   text-align: center;
   border: none;
   background: none;
