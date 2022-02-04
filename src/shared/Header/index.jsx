@@ -13,11 +13,7 @@ export default function Header() {
 
   function ArrowLeftComponent() {
     const goHome = () => navigate("/");
-    return (
-      <div onClick={goHome}>
-        <ArrowLeft />
-      </div>
-    );
+    return <ArrowLeft onClick={goHome} />;
   }
 
   return (
@@ -25,7 +21,7 @@ export default function Header() {
       {pathname === "/" && <HeaderNav text="보유카드" to="/" />}
       {pathname === "/detail" && (
         <HeaderNav
-          text="카드상세"
+          text="카드 추가"
           to="/detail"
           iconComponent={<ArrowLeftComponent />}
         />

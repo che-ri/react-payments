@@ -1,10 +1,24 @@
 import React from "react";
 
+//components
+import CardContainer from "../components/CardContainer";
+
 export default function CardDetail() {
+  const initialCardInfo = {
+    companyName: undefined,
+    cardNumber: undefined,
+    cardAlias: undefined,
+    ownerName: "NAME",
+    validity: "MM/YY",
+  };
+
+  const currentCardInfo = undefined;
+
   return (
     <div>
-      디테일페이지
-      <div className="small-card"> </div>
+      <CardContainer
+        cardInfo={currentCardInfo ? currentCardInfo : initialCardInfo}
+      />
     </div>
   );
 }
