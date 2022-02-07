@@ -1,7 +1,8 @@
 import React from "react";
 
 //components
-import CardContainer from "../components/CardContainer";
+import Card from "../components/Card";
+import Input from "../components/CardForm";
 
 export default function CardDetail() {
   const initialCardInfo = {
@@ -14,11 +15,11 @@ export default function CardDetail() {
 
   const currentCardInfo = undefined;
 
+  const cardNumberRefList = React.useRef([null]);
   return (
     <div>
-      <CardContainer
-        cardInfo={currentCardInfo ? currentCardInfo : initialCardInfo}
-      />
+      <Card cardInfo={currentCardInfo ? currentCardInfo : initialCardInfo} />
+      <Input title="카드 번호" ref={cardNumberRefList} />
     </div>
   );
 }

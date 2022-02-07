@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./CardContainer.module.css";
+import styles from "./Card.module.css";
 import { useNavigate } from "react-router-dom";
 
-export default function CardContainer({ cardInfo = {}, big = false }) {
+export default function Card({ cardInfo = {}, big = false }) {
   const navigate = useNavigate();
   const {
     companyName = null,
